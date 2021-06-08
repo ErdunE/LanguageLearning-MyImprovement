@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 构造函数和对象
+        // 1.构造函数 明显 泛指的某一大类 它类似于java里面的类 (class）
+
+        function Star(uname, age, sex) {
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function(sang) {
+                console.log(sang);
+            }
+        }
+
+        // 2.对象 是一个具体事物 刘德华 == {"name": "刘德华","age": 18,"sex": "男"}
+        var ldh = new Star('刘德华', 18, '男');
+        console.log(ldh);
+
+        // 3.我们利用构造函数创建对象的过程 我们也称之为对象的实例化
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

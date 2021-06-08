@@ -1,0 +1,384 @@
+create table testType(
+number tinyint
+);
+
+insert into pet values('Fluffy','Harold','cat','f','1993-02-04',NULL);
+insert into pet values('Claws','Gwen','cat','m','1994-03-17',NULL);
+insert into pet values('Buffy','Harold','dog','f',1989-05-13'',NULL);
+insert into pet values('Fang','Benny','dog','m','1990-08-27',NULL);
+insert into pet values('Bowser','Diane','dog','m','1979-08-31','1995-07-29');
+insert into pet values('Chirpy','Gwen','bird','f','1998-09-11',NULL);
+insert into pet values('Whistler','Gwen','bird','NULL','1997-12-09',NULL);
+insert into pet values('Slim','Benny','snake','m','1996-04-29',NULL);
+insert into pet values('Puffball','Diane','hamster','f','1999-03-30',NULL);
+
+create table user(
+id int primary key,
+name varchar(20)
+);
+
+create table user2(
+id int,
+name varchar(20),
+password varchar(20),
+primary key(id,name)
+);
+
+create table user3(
+id int primary key auto_increment,
+name varchar(20)
+);
+
+create table user4(
+id int,
+name varchar(20)
+);
+
+alter table user4 add primary key(id);
+
+alter table user4 drop primary key;
+
+
+create table user5(
+id int,
+name varchar(20)
+);
+
+alter table user5 add unique(name);
+
+create table user6(
+id int,
+name varchar(20),
+unique(name)
+);
+
+create table user7(
+id int,
+name archer(20) unique
+);
+
+create table user8(
+id int,
+name varchar(20),
+unique(id,name)
+);
+
+create table user9(
+id int,
+name varchar(20) not null
+);
+
+create table user10(
+id int,
+name varchar(20),
+age int default 10
+);
+
+create table classes(
+id int primary key,
+name varchar(20)
+);
+
+create table students(
+id int primary key,
+name varchar(20),
+class_id int,
+foreign key(class_id) references classes(id)
+);
+
+insert into classes values(1,'一班');
+insert into classes values(2,'二班');
+insert into classes values(3,'三班');
+insert into classes values(4,'四班');
+
+insert into students values(1001,'张三',1);
+insert into students values(1002,'张三',2);
+insert into students values(1003,'张三',3);
+insert into students values(1004,'张三',4);
+
+create table student2(
+id int primary key,
+name varchar(20),
+address varchar(30)
+);
+
+insert into student2 values(1,'张三','中国四川省成都市武侯区武侯大道100号');
+insert into student2 values(2,'李四','中国四川省成都市武侯区京城大道200号');
+insert into student2 values(3,'王五','中国四川省成都市高新区天府大道90号');
+
+create table student3(
+id int primary key,
+name varchar(20),
+country varchar(30),
+province varchar(30),
+city varchar(30),
+details varchar(30)
+);
+
+insert into student3 values(1,'张三','中国','四川省','成都市','武侯区武侯大道100号');
+insert into student3 values(2,'李四','中国','四川省','成都市','武侯区京城大道200号');
+insert into student3 values(3,'王五','中国','四川省','成都市','高新区天府大道90号');
+
+
+create table myorder(
+product_id int,
+customer_id int,
+product_name varchar(20),
+customer_name varchar(20),
+primary key(product_id,customer_id)
+);
+
+create table myorder(
+order_id int primary key,
+product_name varchar(20),
+customer_name varchar(20)
+);
+
+create table product(
+id int primary key,
+name varchar(20)
+);
+
+create table customer(
+id int primary key,
+name varchar(20)
+);
+
+create table myorder(
+order_id int primary key,
+product_id int,
+customer_id int
+);
+
+create table product(
+id int primary key,
+name varchar(20)
+);
+
+create table customer(
+id int primary key,
+name varchar(20),
+phone varchar(15)
+);
+
+
+
+学生表
+student
+学号
+姓名
+性别
+出生年月日
+所在班级
+
+create table student(
+sno varchar(20) primary key,
+sname varchar(20) not null,
+ssex varchar(10) not null,
+sbirthday datetime,
+class varchar(20)
+);
+
+教师表
+teacher
+教师编号
+教师名字
+教师性别
+出生年月日
+职称
+所在部门
+create table teacher(
+tno varchar(20) primary key,
+tname varchar(20) not null,
+tsex varchar(10) not null,
+tbirthday datetime,
+prof varchar(20) not null,
+depart varchar(20) not null
+);
+
+
+课程表
+course
+课程号
+课程名称
+教师编号
+create table course(
+cno varchar(20) primary key,
+cname varchar(20) not null,
+tno varchar(20) not null,
+foreign key(tno) references teacher(tno)
+);
+
+成绩表
+score
+学号
+课程号
+成绩
+create table score(
+sno varchar(20) not null,
+cno varchar(20) not null,
+degree decimal,
+foreign key(sno) references student(sno),
+foreign key(cno) references course(cno),
+primary key(sno,cno)
+);
+
+添加数据
+学生表
+insert into student values('101','曾华','男','1977-09-01','95033');
+insert into student values('102','匡明','男','1975-10-02','95031');
+insert into student values('103','王丽','女','1976-01-23','95033');
+insert into student values('104','李军','男','1976-02-20','95033');
+insert into student values('105','王芳','女','1975-02-10','95031');
+insert into student values('106','陆君','男','1974-06-03','95031');
+insert into student values('107','王尼玛','男','1976-02-20','95033');
+insert into student values('108','张全蛋','男','1975-02-10','95031');
+insert into student values('109','赵铁柱','男','1974-06-03','95031');
+insert into student values('110','张飞','男','1974-06-03','95038');
+
+insert into teacher values('804','李诚','男','1958-12-02','副教授','计算机系');
+insert into teacher values('856','张旭','男','1969-03-12','讲师','电子工程系');
+insert into teacher values('825','王萍','女','1972-05-05','助教','计算机系');
+insert into teacher values('831','刘冰','女','1977-08-14','助教','电子工程系');
+
+insert into course values('3-105','计算机导论','825');
+insert into course values('3-245','操作系统','804');
+insert into course values('6-166','数字电路','856');
+insert into course values('9-888','高等数学','831');
+
+insert into score values('103','3-245','86');
+insert into score values('105','3-245','75');
+insert into score values('109','3-245','63');
+insert into score values('103','3-105','92');
+insert into score values('105','3-105','88');
+insert into score values('109','3-105','76');
+insert into score values('103','6-166','85');
+insert into score values('105','6-166','79');
+insert into score values('109','6-166','81');
+
+insert into score values('101','3-245','90');
+insert into score values('102','3-245','91');
+insert into score values('104','3-245','89');
+insert into score values('103','3-105','92');
+insert into score values('105','3-105','88');
+insert into score values('109','3-105','76');
+insert into score values('103','6-166','85');
+insert into score values('105','6-166','79');
+insert into score values('109','6-166','81');
+
+平均值
+select avg(degree) from score where cno='3-105';
+select avg(degree) from score where cno='3-245';
+select avg(degree) from score where cno='6-166';
+select avg(degree) from score where cno='9-888';
+
+select cno,avg(degree),count(*) from score 
+group by cno 
+having count(*)>=2 
+and cno like '3%';
+
+select * from teacher where depart='电子工程系' and prof not in(select prof from teacher where depart='计算机系');
+select * from teacher where depart='计算机系' and prof not in(select prof from teacher where depart='电子工程系');
+
+select * from score where cno='3-245'
+
+select * from score where cno='3-105' and degree>any(select degree from score where cno='3-245');
+
+select * from score where cno='3-105' and degree>all(select degree from score where cno='3-245') order by degree desc;
+
+select sname name,ssex as sex,sbirthday as birthday from student
+union
+select tname,tsex,tbirthday from teacher;
+
+select sname name,ssex as sex,sbirthday as birthday from student where ssex='女'
+union
+select tname,tsex,tbirthday from teacher where tsex='女';
+
+select cno,avg(degree) from score group by cno;
+
+select * from score a where degree<(select avg(degree) from score b where a.cno=b.cno);
+
+select * from teacher;
+select * from course;
+
+select tname,depart from teacher where tno in(select tno from course);
+
+ select class from student where ssex='男' group by class having
+count(*)>1;
+
+select * from student where sname not like '王%';
+
+select sname,sbirthday from student;
+
+select year(now()); 
+
+select year(sbirthday) from student;
+
+select sname name,year(now())-year(sbirthday) age from student;
+
+select max(sbirthday) as '最大',min(sbirthday) as '最小' from student;
+
+select * from teacher where tsex='男';
+select * from course where tno in(select * from teacher where tsex='男');
+
+select max(degree) from score;
+select * from score where degree in(select max(degree) from score);
+
+select ssex from student where sname='李军'
+select class from student where ssex in(select ssex from student where sname='李军');
+select sname from student where ssex in(select ssex from student where sname='李军');
+
+select sname from student where ssex=(select ssex from student where sname='李军') and class=(select class from student where sname='李军');
+
+select * from student where ssex='男';
+select * from course where cname='计算机导论';
+select * from score where cno=(select cno from course where cname='计算机导论') and sno=(select sno from student where ssex='男');
+
+create table grade(
+low int(3),
+upp int(3),
+grade char(1)
+);
+
+insert into grade values(90,100,'A');
+insert into grade values(80,89,'B');
+insert into grade values(70,79,'C');
+insert into grade values(60,69,'D');
+insert into grade values(0,59,'E');
+
+
+create table person(
+id int,
+name varchar(20),
+cardID int
+);
+
+create table card(
+id int,
+name varchar(20)
+);
+
+insert into card values(1,'饭卡');
+insert into card values(2,'建行卡');
+insert into card values(3,'农行卡');
+insert into card values(4,'工商卡');
+insert into card values(5,'邮政卡');
+
+insert into person values(1,'张三',1);
+insert into person values(2,'李四',3);
+insert into person values(3,'王五',6);
+
+select * from person left join card on person.cardId=card.id
+union
+select * from person right join card on person.cardId=card.id;
+
+update user set money=money-800 where name='小明';
+update user set money=money+800 where name='淘宝店';
+
+update user set money=money-1800 where name='淘宝店';
+
+update user set money=money-1800 where name='小张';
+update user set money=money-1800 where name='小王';
+
+
+

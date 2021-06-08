@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 将[2,0,6,1,77,0,52,0,25,7]中大于10的元素选出来，放入新数组
+        // 方法一
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArray = [];
+        var j = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                newArray[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(newArray);
+        // 方法二
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArray = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                newArray[newArray.length] = arr[i];
+            }
+        }
+        console.log(newArray);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：接受用户输入的分数，根绝分数输出对应的等级字母A B C D E 
+        // 其中：
+        // 1. 90分(含)以上，输出:A
+        // 2. 80分(含)~90分(不含)，输出:B
+        // 3. 70分(含)~80分(不含)，输出:C
+        // 4. 60分(含)~70分(不含)，输出:D
+        // 5. 60分(不含)以下，输出:E
+
+        var score = prompt('请输入您的分数');
+        if (score >= 90) {
+            alert('您的等级是A');
+        } else if (score >= 80) {
+            alert('您的等级是B');
+        } else if (score >= 70) {
+            alert('您的等级是C');
+        } else if (score >= 60) {
+            alert('您的等级是D');
+        } else {
+            alert('您的等级是E');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求用户输入班级人数，之后依次输入每个学生的成绩，最后输出这个班的总成绩和平均成绩
+        var num = prompt('请输入班级的人数:');
+        var sum = 0;
+        var avg = 0;
+        for (var i = 1; i <= num; i++) {
+            var score = prompt('请输入学生' + i + '的成绩:');
+            sum = sum + parseFloat(score);
+        }
+        avg = sum / num;
+        alert('这个班的总成绩是' + sum);
+        alert('这个班的平均成绩是' + avg);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

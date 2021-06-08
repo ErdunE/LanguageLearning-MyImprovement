@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* Find 3 closest numbers of a given number (50) in an array: [45, 32, 55, 16, 25, 74, 22, 13, 27, 41];
+         */
+        const givenArr = [44, 32, 55, 16, 25, 74, 22, 13, 27, 41];
+
+        // complete the solution: 
+        function solution(givenNum, givenArr) {
+            // for (var i = 0; i < givenArr.length; i++) {
+            //     var newDistance = Math.abs(givenArr[i] - givenNum);
+            //     var newArray = [];
+            //     newArray.push(newDistance);
+            //     newArray.sort();
+            //     for (var j = 0; j < 3; j++) {
+            //         var res = [];
+            //         res.push(newArray[j]);
+            //     }
+            // }
+            // return res;
+
+            var curr = givenArr[0];
+            var diff = Math.abs(givenNum - curr);
+            for (var val = 0; val < givenArr.length; val++) {
+                var newdiff = Math.abs(givenNum - givenArr[val]);
+                if (newdiff < diff) {
+                    diff = newdiff;
+                    curr = givenArr[val];
+                }
+            }
+            return curr;
+        }
+        // test:
+        console.log(solution(50, givenArr));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

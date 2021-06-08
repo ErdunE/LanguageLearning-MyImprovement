@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 查找字符串'abcoefoxyozzopp'中所有o出现的位置和次数
+        var str = 'abcoefoxyozzopp';
+        var index = str.indexOf('o');
+        var num = 0;
+        //console.log(index);
+        while (index != -1) {
+            console.log(index);
+            num++;
+            index = str.indexOf('o', index + 1)
+        }
+        console.log(num);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

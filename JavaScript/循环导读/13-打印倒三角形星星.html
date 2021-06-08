@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = '';
+        var row = prompt('请输入您打印几行星星');
+        var col = prompt('请输入您打印几列星星');
+        for (var i = 1; i <= row; i++) // 外层循环负责打印五行
+        {
+            for (var j = i; j <= col; j++) // 内层循环负责一行打印五个星星
+            {
+                str = str + '☆';
+            }
+            // 如果一行打印完毕五个星星就要另起一行 \n
+            str = str + '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
