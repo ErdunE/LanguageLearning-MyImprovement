@@ -18,5 +18,7 @@
 > >
 > > 4.  Beginner
 > >
-> >    > ​	SQL, React(JS)
+> >    > SQL, React(JS)
+
+Last Updated: 06/07/2021
 
